@@ -1,1 +1,5 @@
-# rRice
+# RRicePackage
+
+```
+sudo pip install RRiceBeta
+```
