@@ -107,6 +107,19 @@ setGeneric(
     def = function(object, attributesVector){standardGeneric("selectProperties" )}
 )
 
+#' Add manually a new database read by a file
+#'
+#' @param object The object for which we want modification.
+#' @return The object with the new database which has been added.
+#' @exportMethod createNewDB
+#' @name createNewDB
+#' @rdname createNewDB-methods
+#' @docType methods
+setGeneric(
+    name = "createNewDB",
+    def = function(object){standardGeneric("createNewDB" )}
+)
+
 ######################### Getters & setters ###################################
 
 #' Get the name of an object
