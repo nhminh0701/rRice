@@ -38,18 +38,47 @@ setMethod(
                         obj <- strsplit(attributesList[[k]],"[.]")
                         className <- obj[[1]][[1]]
                         attributeName <- obj[[1]][[2]]
-                        if(class(geneList[[i]][[j]]) == className){
+                        if(class(geneList[[i]][[j]]) == className && class(geneList[[i]][[j]]) != "Gene"){
                             properties <- attributes(geneList[[i]][[j]])
                             properties <- properties[attributeName]
                             properties <- properties[[1]]
                             if(typeof(properties) == "list"){
                                 for(i in 1:length(properties)){
-                                result[[k]][[j]] <- paste(result[[k]][[j]],properties[[i]])
+                                result[[k]][[j]] <- paste(result[[k]][[j]],
+                                                          properties[[i]])
                                 }
                             }else{
                                 result[[k]][[j]] <- properties[[1]]
                             }
-                            
+                        }
+                        else if (class(geneList[[i]][[j]]) == "Gene") {
+                            properties <- attributes(geneList[[i]][[j]])
+                            properties <- properties["others"]
+                            properties <- properties[[1]]
+                            #print(properties)
+                            #print(length(properties))
+                            #print(names(properties[[1]]))
+                            if (length(properties) > 0) {
+                                for (w in 1 : length(properties)) {
+                                    #print(properties)
+                                    if(names(properties[[w]]) == attributeName){
+                                        #print(names(properties[[w]]))
+                                        #print(class(properties[[w]]))
+                                        propertiesFinal <- properties[[w]]
+                                        #print(propertiesFinal)
+                                        #print(w)
+                                    }
+                                }
+                            }
+                            #properties <- properties[[1]]
+                            if(typeof(propertiesFinal) == "list"){
+                                for(i in 1:length(propertiesFinal)){
+                                    result[[k]][[j]] <- paste(result[[k]][[j]],
+                                                        propertiesFinal[[i]])
+                                }
+                            }else{
+                                result[[k]][[j]] <- propertiesFinal[[1]]
+                            }
                         }
                     }
                     i <- i+1
