@@ -22,6 +22,14 @@ setMethod(
             readline(
                 prompt=paste("What kind of typeID is on the first",
                 "row of your file (1 : msu; 2 : rapdb) : ")))
+        
+        while (typeID >2 || typeID <1) {
+            print("You have to seize 1 or 2")
+            typeID <- as.numeric(
+                readline(
+                    prompt=paste("What kind of typeID is on the first",
+                                 "row of your file (1 : msu; 2 : rapdb) : ")))
+        }
 
         ##Ask the kind of separator
         separator <- as.character(
