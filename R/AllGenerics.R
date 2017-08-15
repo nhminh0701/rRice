@@ -120,6 +120,23 @@ setGeneric(
     def = function(object){standardGeneric("createNewDB" )}
 )
 
+#' Select the genes you want to keep in your experiment
+#'
+#' @param object The object for which we want modification.
+#' @param liste list with all the genes' id you want to keep in your experiment
+#' @param typeID it refers to the id you will provide in your list(rapdb or msu)
+#' @return The object with only the genes selected
+#' @exportMethod selectGenes
+#' @name selectGenes
+#' @rdname selectGenes-methods
+#' @docType methods
+setGeneric(
+    name = "selectGenes",
+    def = function(object, liste, typeID){standardGeneric("selectGenes" )}
+)
+
+
+
 ######################### Getters & setters ###################################
 
 #' Get the name of an object
