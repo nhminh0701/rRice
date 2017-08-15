@@ -38,7 +38,7 @@ setMethod(
                         obj <- strsplit(attributesList[[k]],"[.]")
                         className <- obj[[1]][[1]]
                         attributeName <- obj[[1]][[2]]
-                        if(class(geneList[[i]][[j]]) == className && class(geneList[[i]][[j]]) != "Gene"){
+                        if(class(geneList[[i]][[j]]) == className && className != "Gene"){
                             properties <- attributes(geneList[[i]][[j]])
                             properties <- properties[attributeName]
                             properties <- properties[[1]]
@@ -51,7 +51,7 @@ setMethod(
                                 result[[k]][[j]] <- properties[[1]]
                             }
                         }
-                        else if (class(geneList[[i]][[j]]) == "Gene") {
+                        else if (className == "Gene") {
                             properties <- attributes(geneList[[i]][[j]])
                             properties <- properties["others"]
                             properties <- properties[[1]]
@@ -69,6 +69,9 @@ setMethod(
                                         #print(w)
                                     }
                                 }
+                            }
+                            else {
+                                propertiesFinal <- ""
                             }
                             #properties <- properties[[1]]
                             if(typeof(propertiesFinal) == "list"){
