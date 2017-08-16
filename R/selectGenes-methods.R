@@ -1,6 +1,14 @@
 #' @return The object with the new db
 #' @rdname selectGenes-methods
 #' @aliases selectGenes,Experiment-method
+#' @examples 
+#' exp <- new(Class="Experiment",
+#' name="test",
+#' date=Sys.Date(),
+#' databases=list(1),
+#' others=list())
+#' listGenesIds <- list()
+#' exp <- selectGenes(exp, listGenesIds, "RAPDB")
 setMethod(
     "selectGenes",
     signature = "Experiment",

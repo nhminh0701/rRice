@@ -25,3 +25,12 @@ The object with the new db
 \description{
 Select the genes you want to keep in your experiment
 }
+\examples{
+exp <- new(Class="Experiment",
+name="test",
+date=Sys.Date(),
+databases=list(1),
+others=list())
+listGenesIds <- list()
+exp <- selectGenes(exp, listGenesIds, "RAPDB")
+}

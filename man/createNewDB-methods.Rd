@@ -4,6 +4,14 @@
 \name{createNewDB}
 \alias{createNewDB}
 \alias{createNewDB,Experiment-method}
+\alias{exp}
+\alias{<-}
+\alias{new(Class="Experiment",}
+\alias{name="test",}
+\alias{date=Sys.Date(),}
+\alias{databases=list(1),}
+\alias{others=list())}
+\alias{createNewDB(exp)}
 \title{Add manually a new database read by a file}
 \usage{
 createNewDB(object)

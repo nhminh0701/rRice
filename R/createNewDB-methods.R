@@ -1,6 +1,12 @@
 #' @return The object with the new db
 #' @rdname createNewDB-methods
 #' @aliases createNewDB,Experiment-method
+#' exp <- new(Class="Experiment",
+#' name="test",
+#' date=Sys.Date(),
+#' databases=list(1),
+#' others=list())
+#' exp <- createNewDB(exp)
 setMethod(
     "createNewDB",
     signature = "Experiment",

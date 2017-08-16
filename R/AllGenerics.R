@@ -135,7 +135,20 @@ setGeneric(
     def = function(object, liste, typeID){standardGeneric("selectGenes" )}
 )
 
-
+#' Get a list of ids (RAPDB or MSU)
+#'
+#' @param object The object for which we want modification.
+#' @param typeID the id we want in the list (RAPDB or MSU)
+#' @return the list of the ids composed only with RAPDB ids or MSU ids.
+#' @exportMethod getGenesIds
+#' @name getGenesIds
+#' @rdname getGenesIds-methods
+#' @exportMethod getGenesIds
+#' @docType methods
+setGeneric(
+    name ="getGenesIds",
+    def = function(object, typeID){standardGeneric("getGenesIds" )}
+)
 
 ######################### Getters & setters ###################################
 
