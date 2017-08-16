@@ -135,6 +135,19 @@ setGeneric(
     def = function(object, liste, typeID){standardGeneric("selectGenes" )}
 )
 
+#' Add new DBs at your experiment
+#'
+#' @param object The object for which we want modification.
+#' @return The object with the new databases which have been added.
+#' @exportMethod addDBs
+#' @name addDBs
+#' @rdname addDBs-methods
+#' @docType methods
+setGeneric(
+    name = "addDBs",
+    def = function(object){standardGeneric("addDBs" )}
+)
+
 #' Get a list of ids (RAPDB or MSU)
 #'
 #' @param object The object for which we want modification.
@@ -149,6 +162,8 @@ setGeneric(
     name ="getGenesIds",
     def = function(object, typeID){standardGeneric("getGenesIds" )}
 )
+
+
 
 ######################### Getters & setters ###################################
 
