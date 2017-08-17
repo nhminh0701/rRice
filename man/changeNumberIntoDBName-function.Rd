@@ -6,6 +6,9 @@
 \usage{
 changeNumberIntoDBName(number)
 }
+\arguments{
+\item{number}{integer}
+}
 \value{
 return the name of the database associate to the number
 }

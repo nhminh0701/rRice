@@ -6,6 +6,9 @@
 \usage{
 changeDBNameIntoNumber(dbName)
 }
+\arguments{
+\item{dbName}{the name of the db}
+}
 \value{
 return the number of databases availables
 }

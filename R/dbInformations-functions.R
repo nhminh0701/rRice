@@ -55,6 +55,7 @@ databasesAvailables <- function(){
 #'
 #' this function return the name of the database associate to the number
 #' 
+#' @param number integer
 #' @return return the name of the database associate to the number
 #' @rdname changeNumberIntoDBName-function
 changeNumberIntoDBName <- function(number){
@@ -66,6 +67,7 @@ changeNumberIntoDBName <- function(number){
 #'
 #' this function return the number of databases availables
 #' 
+#' @param dbName the name of the db
 #' @return return the number of databases availables 
 #' @rdname changeDBNameIntoNumber-function
 changeDBNameIntoNumber <- function(dbName){
