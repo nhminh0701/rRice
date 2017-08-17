@@ -62,7 +62,7 @@ setMethod(
             }
         }
         else {
-            stop("You provide an empty list")
+            print("You provide an empty list")
         }
         object@genes <- listeGenes
         #print(listeGenes)

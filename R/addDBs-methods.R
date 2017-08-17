@@ -2,14 +2,6 @@
 #' @return The object with the new dbs
 #' @rdname addDBs-methods
 #' @aliases addDBs,Experiment-method
-#' @examples 
-#' exp <- new(Class="Experiment",
-#' name="test",
-#' date=Sys.Date(),
-#' databases=list(1),
-#' others=list())
-#' listGenesIds <- list()
-#' exp <- addDBs(exp)
 setMethod(
     "addDBs",
     signature = "Experiment",
@@ -17,15 +9,17 @@ setMethod(
         ## the number of databases available. To increment every time we have
         ## one more database available
         dbAvailables <- databasesAvailables()
-        
+
         correctNbdb <- FALSE
         while(!correctNbdb){
             nbdb <- as.numeric(
                 readline(
                     prompt="How many databases do you want to experiment ? :"))
-            if(is.numeric(nbdb) && nbdb > 0 && nbdb <= dbAvailables){
-                databases <- vector(mode='list', length=nbdb)
-                correctNbdb <- TRUE
+            if(is.numeric(nbdb)){
+                if (nbdb > 0 && nbdb <= dbAvailables) {
+                    databases <- vector(mode='list', length=nbdb)
+                    correctNbdb <- TRUE
+                }
             }
             else{
                 message("you have not choose a correct number of databases.")

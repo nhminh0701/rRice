@@ -22,12 +22,3 @@ The object with the new dbs
 \description{
 Add new DBs at your experiment
 }
-\examples{
-exp <- new(Class="Experiment",
-name="test",
-date=Sys.Date(),
-databases=list(1),
-others=list())
-listGenesIds <- list()
-exp <- addDBs(exp)
-}
