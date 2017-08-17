@@ -9,50 +9,59 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
 
-- Never uses retina figures
-- Has a smaller default figure size
-- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
+## Informations about the vignette
 
-## Vignette Info
+In this vignette, you will find how to use the **rRice** package and it will be illustrated by examples. 
+To use this package, you will have to create an experiment and then you will be able to work with it :
+    * Interrogate the databases
+    * Add manually databases
+    * Create an array with specific genes and properties
 
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
+## Examples
 
-## Styles
+### 1.) Create an experiment and add databases
 
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
-
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
-
-## Figures
-
-The figure sizes have been customised so that you can easily put two images side-by-side. 
-
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
+The first thing you will have to do to use the package is to create a new experiment with the `createExperiment(name, locus)` function :
+```
+locus <- data.frame(ch = c("1"), st = c("148907"), end = c("248907"))
+experiment <- createExperiment("newExperiment", locus)
 ```
 
-You can enable figure captions by `fig_caption: yes` in YAML:
+Then you will have to follow instructions :
+    * First you will have to tell how many databases you want to experiment
+    * Then you will have to give the date of your experiment
+    * Finally, you will have to choose which databases to choose
+    
+After succeeding these steps, you will have an operational `experiment` you will be able to use. 
 
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
+### 2.) Consult your experiment
 
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
+If you want to collect the informations about your `experiment` :
+    * name : `experiment@name`
+    * date : `experiment@date`
+    * databases : `experiment@databases` will return all the databases you have add to your experiment
+    * genes : `experiment@genes` will return the list of the genes of all the databases you interrogated
+    * properties : `experiment@properties` will return the list of the properties you selected with `selectProperties(...)`
+    * others : `experiment@others` will contain a list with your personal informations you added with the function `addAttribute(...)`
 
-## More Examples
+### 3.) Add new databases to your experiment
 
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
+If you wish to add new databases in your variable `experiment` then  
 
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
-```
 
-Also a quote using `>`:
 
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
