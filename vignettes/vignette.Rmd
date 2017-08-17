@@ -35,6 +35,28 @@ Then you will have to follow instructions :
     
 After succeeding these steps, you will have an operational `experiment` you will be able to use. 
 
+Example :
+```
+> locus <- data.frame(ch = c("1"), st = c("148907"), end = c("248907"))
+> experiment <- createExperiment("newExperiment", locus)
+How many databases do you want to experiment ? :1
+Enter the date of the experiment (mm/dd/yyyy) : 09/17/2016
+loading informations...
+The list of the databases : 
+1 for RAPDB 
+2 for Gramene 
+3 for Oryzabase 
+4 for IC4R 
+5 for Planttfdb 
+6 for PLNTFDB 
+7 for Funricigenes 
+8 for Funricigenes2 
+9 for Funricigenes3 
+10 for MSU7 
+1
+```
+Then wait for few seconds that your RAPDB database has been well-added to your experiment
+
 ### 2.) Consult your experiment
 
 If you want to collect the informations about your `experiment` :
@@ -45,15 +67,85 @@ If you want to collect the informations about your `experiment` :
 * properties : `experiment@properties` will return the list of the properties you selected with `selectProperties(...)`
 * others : `experiment@others` will contain a list with your personal informations you added with the function `addAttribute(...)`
 
-### 3.) Add new databases to your experiment
+Example :
+```
+> experiment@name
+[1] "newExperiment"
+> experiment@databases
+[[1]]
+[1] "RAPDB"
+```
 
-If you wish to add new databases in your variable `experiment` then  
+### 3.) Add new databases to the experiment
 
+If you wish to add new databases in your variable `experiment` :
+```
+experiment <- addDBs(experiment)
+```
 
+Then you will have to select the number of databases you want to add to your experiment and to choose which database to interrogate. 
 
+Example :
+```
+> experiment <- addDBs(experiment)
+How many databases do you want to experiment ? :1
+The list of the databases : 
+1 for RAPDB 
+2 for Gramene 
+3 for Oryzabase 
+4 for IC4R 
+5 for Planttfdb 
+6 for PLNTFDB 
+7 for Funricigenes 
+8 for Funricigenes2 
+9 for Funricigenes3 
+10 for MSU7 
+2
+loading informations of the database...
+```
+Then wait for few seconds that your RAPDB database has been well-added behind your preexisting databases
+Notice that your number of databases of your experiment has been modified :
+```
+> experiment@databases
+[[1]]
+[1] "RAPDB"
 
+[[2]]
+[1] "Gramene"
+```
 
+### 4.) Add manually a new database to the experiment
 
+If you have a personal database you would like to integrate to your variable `experiment` :
+```
+experiment <- createNewDB(experiment)
+```
+
+Then you will have to give few informations about your new database you want to integrate in your experiment : 
+* Name of the new database
+* The type if id of the first column of the file you want to import (rapdb or msu)
+* The separator which is used in the file to separate every datas 
+* The path toward the file you want to import
+
+Example : 
+```
+> experiment <- createNewDB(experiment)
+Your file has to be built as follow : 
+First line is composed with all the names of the attributes
+Others lines composed with all the values of the genes
+Write the name of your new db :newDB
+What kind of typeID is on the first row of your file (1 : msu; 2 : rapdb) : 2
+Which separator is used in your file ? :,
+Write the absolute path until your file :/path/towards/my/file.txt
+```
+Then the new database `newDB` has been well-added to your `experiment` variable and you will find all the genes you added in `experiment@genes`
+
+### 5.) Others useful functions
+
+addAttribute -> others
+selectProperties -> experiment@properties
+selectGenes -> experiment@genes
+getProperties
 
 
 
