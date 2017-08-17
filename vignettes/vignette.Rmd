@@ -29,21 +29,21 @@ experiment <- createExperiment("newExperiment", locus)
 ```
 
 Then you will have to follow instructions :
-    * First you will have to tell how many databases you want to experiment
-    * Then you will have to give the date of your experiment
-    * Finally, you will have to choose which databases to choose
+* First you will have to tell how many databases you want to experiment
+* Then you will have to give the date of your experiment
+* Finally, you will have to choose which databases to choose
     
 After succeeding these steps, you will have an operational `experiment` you will be able to use. 
 
 ### 2.) Consult your experiment
 
 If you want to collect the informations about your `experiment` :
-    * name : `experiment@name`
-    * date : `experiment@date`
-    * databases : `experiment@databases` will return all the databases you have add to your experiment
-    * genes : `experiment@genes` will return the list of the genes of all the databases you interrogated
-    * properties : `experiment@properties` will return the list of the properties you selected with `selectProperties(...)`
-    * others : `experiment@others` will contain a list with your personal informations you added with the function `addAttribute(...)`
+* name : `experiment@name`
+* date : `experiment@date`
+* databases : `experiment@databases` will return all the databases you have add to your experiment
+* genes : `experiment@genes` will return the list of the genes of all the databases you interrogated
+* properties : `experiment@properties` will return the list of the properties you selected with `selectProperties(...)`
+* others : `experiment@others` will contain a list with your personal informations you added with the function `addAttribute(...)`
 
 ### 3.) Add new databases to your experiment
 
