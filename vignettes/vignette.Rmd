@@ -142,11 +142,60 @@ Then the new database `newDB` has been well-added to your `experiment` variable 
 
 ### 5.) Others useful functions
 
-addAttribute -> others
-selectProperties -> experiment@properties
-selectGenes -> experiment@genes
-getProperties
+#### a.) addAttribute function
+If you want to add personal informations for your experiment then use this functions as follows :
+```
+> experiment <- addAttribute(experiment, "newAttribut", "1")
+> experiment@others
+[[1]]
+newAttribut 
+        "1" 
+```
 
+#### b.) Create an array with specific genes and properties selected by the user
+
+After you added a lot of databases in your variable `experiment`, you may want to create an array with only few genes and few properties. 
+To do so, you will have to :
+#### 1.) selectProperties function
+
+The goal of this function is to select only the properties of your differents databases of your experiment you want to study :
+```
+> experiment <- selectProperties(experiment, list("RAPDB.id", "Gramene.geneIdx", "Gene.attribut1"))
+> experiment@properties
+[[1]]
+[1] "RAPDB.id"
+
+[[2]]
+[1] "Gramene.geneIdx"
+
+[[3]]
+[1] "Gene.attribut1"
+
+```
+
+#### 2.) selectGenes function
+
+The goal of this function is to select only the genes of your databases of your experiment you want to study.
+The first argument of your function `selectGenes` is the `experiment`, the second is the list of genes you want to study `listeGenes` (rapdb or msu) and the last refer the type of id genes there are in `listeGenes`.
+
+Example :
+```
+> listeGenes <- list("Os01g0104600","Os01g0104400")
+> experiment <- selectGenes(experiment, listeGenes, "RAPDB")
+```
+
+#### 3.) getProperties function
+
+Thanks to 1.) and 2.) we will be able to create an array only with the genes and properties selected above.
+The first argument of the `getProperties` function is your variable `experiment` and the second represents which id of the gene will be present in the array (rapdb or msu).
+
+Example :
+```
+> getProperties(experiment, "RAPDB")
+                     rapdb.id gramene.geneidx gene.attribut1
+Os01g0104400 OsNippo01g013050              72             12
+Os01g0104600 OsNippo01g013200              75             14
+```
 
 
 
