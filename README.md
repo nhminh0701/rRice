@@ -59,24 +59,3 @@ The **rRice** package is licenced under the Artistic-2.0
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-```
-sudo pip install RRiceBeta
-```
