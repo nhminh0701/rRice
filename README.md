@@ -28,17 +28,16 @@ This **rRice** package will allow the biologist to :
 
 The installation of the **rRice** package will require few tools on your computer :
 * R
-* Python3 with few libraries available (pandas, requests, bs4, json, gzip and lxml)
+* Python3 with few libraries available (`pandas`, `requests`, `bs4`, `json`, `gzip` and `lxml`)
 
 ## Installation
 
 If you want to install **rRice** package you will have to follow the instructions below :
 
-### 1.) Install **rRice** package in R
-
-From R, write in the R's console the following line :
+To install **rRice** package, start R and enter write the following lines : 
 ```
-install.packages("rRice")
+source("https://bioconductor.org/biocLite.R")
+biocLite("rRice")
 ```
 
 ## Licence
