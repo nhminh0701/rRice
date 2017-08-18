@@ -9,7 +9,7 @@ This **rRice** package will allow the biologist to :
 * Create an experiment.
 
 * Interrogate Databases. Currently, 10 databases are avaible to use :
-    - RAPDB
+    - RAPDB 
     - Gramene
     - Oryzabase
     - Ic4r
@@ -18,7 +18,7 @@ This **rRice** package will allow the biologist to :
     - Funricigenes
     - Funricigenes2
     - Funricigenes3
-    - Msu
+    - Msu7
     
 * Add manually new databases to your experiment in order to enrich your datas.
 

@@ -13,14 +13,15 @@ addons:
       - gcc-4.9
       - g++-4.9
 
+before_install:
+  - curl -OL http://raw.github.com/craigcitro/r-travis/master/scripts/travis-tool.sh
+  - chmod 755 ./travis-tool.sh
 before_install: |
   mkdir ~/.R
   cat <<EOF > ~/.R/Makevars
   CXX1X=g++-4.9
   CXX1XSTD=-std=c++11
   CXX=gcc-4.9
-  - curl -OL http://raw.github.com/craigcitro/r-travis/master/scripts/travis-tool.sh
-  - chmod 755 ./travis-tool.sh
 install:
   ## For a Bioconductor package
   - ./travis-tool.sh install_bioc BiocInstaller
