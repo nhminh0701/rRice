@@ -2,8 +2,7 @@
 
 
 language: R
-python : 
-  - "3.0"
+
 sudo: required
 cache: packages
 bioc_required: true
@@ -14,6 +13,8 @@ r:
   - devel
   - bioc-release
   - bioc-devel
+python : 
+  - "3.0"
   
  before_install:
   - sudo apt-get -y install python3-pip python-dev
