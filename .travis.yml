@@ -4,3 +4,8 @@ language: R
 sudo: required
 cache: packages
 bioc_required: true
+
+r:
+  - oldrel
+  - release
+  - devel
