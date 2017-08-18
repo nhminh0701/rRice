@@ -1,6 +1,9 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 
+
 language: R
+python : 
+  - "3.0"
 sudo: required
 cache: packages
 bioc_required: true
@@ -11,3 +14,10 @@ r:
   - devel
   - bioc-release
   - bioc-devel
+  
+ before_install:
+  - sudo apt-get -y install python3-pip python-dev
+  - sudo pip3 install -U setuptools
+  - sudo pip3 install -U virtualenvwrapper
+  - python3 -V
+  - pip3 -V
