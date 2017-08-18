@@ -1,11 +1,12 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 
-language: R
+language: R, python
 sudo: required
 cache: packages
 bioc_required: true
 
 r:
+  - oldrel
   - release
   - devel
   - bioc-release
