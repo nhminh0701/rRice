@@ -24,7 +24,7 @@ This **rRice** package will allow the biologist to :
 
 * Create an array with only the genes and properties wanted.
 
-##Requirements
+## Requirements
 
 The installation of the **rRice** package will require few tools on your computer :
 * R
