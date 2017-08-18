@@ -24,30 +24,19 @@ This **rRice** package will allow the biologist to :
 
 * Create an array with only the genes and properties wanted.
 
+##Requirements
+
+The installation of the **rRice** package will require few tools on your computer :
+* R
+* Python3 with few libraries available (pandas, requests, bs4, json, gzip and lxml)
+
 ## Installation
 
 If you want to install **rRice** package you will have to follow the instructions below :
 
-### 1.) Install R
+### 1.) Install **rRice** package in R
 
-For Ubuntu, write the following line into your terminal
-```
-sudo apt-get update
-sudo apt-get install r-base
-```
-
-### 2.) Install Rstudio
-
-You will have to install Rsutio at the following adress : https://www.rstudio.com/products/rstudio/download/
-
-Then you will write in your terminal the following line to execute the .deb : 
-```
-sudo dpkg -i DEB_PACKAGE
-```
-
-### 3.) Install **rRice** package in Rstudio
-
-From Rstudio, write in the Rstudio's console the following line :
+From R, write in the R's console the following line :
 ```
 install.packages("rRice")
 ```
