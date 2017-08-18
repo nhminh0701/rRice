@@ -1,19 +1,15 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 
-matrix:
-  include:
-    - language: R
-      sudo: required
-      cache: packages
-      bioc_required: true
 
-      r:
-        - oldrel
-        - release
-        - devel
-        - bioc-release
-        - bioc-devel
-        
-    - language : python
-      before_install : 
-        - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo pip install
+language: R
+sudo: required
+cache: packages
+bioc_required: true
+
+r:
+  - oldrel
+  - release
+  - devel
+  - bioc-release
+  - bioc-devel
+ 
