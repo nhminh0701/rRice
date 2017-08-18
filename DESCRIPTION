@@ -7,7 +7,6 @@ Author: Gallego Julien <julien.gallego.pro@gmail.com>,
          Hai Ho Bich <hobichhai@gmail.com>
 Maintainer: Hai Ho Bich <hobichhai@gmail.com>
 License: Artistic-2.0
-Depends: R (>= 3.2.0)
 Imports: methods, jsonlite, PythonInR, findpython, utils, purrr
 Suggests: testthat, knitr, rmarkdown
 SystemRequirements: python pkgs bs4, lxml, pandas, requests
