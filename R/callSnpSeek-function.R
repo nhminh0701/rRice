@@ -178,9 +178,7 @@ getIds <- function (i, locusList) {
 #' @export
 #' @rdname callSnpSeek-function
 #' @examples 
-#' locusList <- data.frame(ch = c("1"),
-#'                         st = c("148907"),
-#'                         end = c("248907"))
+#' locusList <- data.frame()
 #'                   
 #' callSnpSeek(locusList)
 callSnpSeek <- function(locus){
