@@ -12,6 +12,3 @@ r:
   - devel
   - bioc-release
   - bioc-devel
-  
- before_install:
-  - sudo apt-get -y install python3-pip python-dev
