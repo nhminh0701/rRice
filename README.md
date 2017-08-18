@@ -9,16 +9,16 @@ This **rRice** package will allow the biologist to :
 * Create an experiment.
 
 * Interrogate Databases. Currently, 10 databases are avaible to use :
-    - RAPDB 
-    - Gramene
-    - Oryzabase
-    - Ic4r
-    - Planttfdb
-    - Plntfdb
-    - Funricigenes
-    - Funricigenes2
-    - Funricigenes3
-    - Msu7
+    - RAPDB (http://rapdb.dna.affrc.go.jp/)
+    - Gramene (http://www.gramene.org/)
+    - Oryzabase (https://shigen.nig.ac.jp/rice/oryzabase/)
+    - IC4R (http://ic4r.org/)
+    - PlantTFDB (http://planttfdb.cbi.pku.edu.cn/)
+    - PlnTFDB (http://plntfdb.bio.uni-potsdam.de/)
+    - Funricegenes (https://funricegenes.github.io/docs/)
+    - Funricegenes2
+    - Funricegenes3
+    - MSU7 (http://rice.plantbiology.msu.edu/)
     
 * Add manually new databases to your experiment in order to enrich your datas.
 
