@@ -16,17 +16,16 @@ addons:
       - deadsnakes # source required so it finds the package definition below
     packages:
       - python3-pip
-      - python-pip
       
 before_install:
   - sudo pip install --upgrade pip
 
-r:
-  - oldrel
-  - release
-  - devel
-  - bioc-release
-  - bioc-devel
+#r:
+#  - oldrel
+#  - release
+#  - devel
+#  - bioc-release
+#  - bioc-devel
   
 os:
   - linux
