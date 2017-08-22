@@ -12,3 +12,7 @@ r:
   - devel
   - bioc-release
   - bioc-devel
+  
+os:
+  - linux
+  - osx
