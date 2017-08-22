@@ -14,6 +14,8 @@ def main():
         install("json")
         install("gzip")
         install("lxml")
+    except:
+        pass
 
 
 # Pour eviter que le script soit execute lors d'un simple import
