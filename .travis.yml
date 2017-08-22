@@ -16,3 +16,4 @@ r:
 os:
   - linux
   - osx
+  - windows
