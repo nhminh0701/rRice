@@ -15,3 +15,6 @@ addons:
     packages:
     - python3-pip
     
+os:
+- linux
+- osx
