@@ -7,12 +7,12 @@ def install(package):
 
 def main():
     try:
-        install("pandas")
-        install("bs4")
-        install("requests")
-        install("json")
-        install("gzip")
-        install("lxml")
+        #install("pandas")
+        #install("bs4")
+        #install("requests")
+        #install("json")
+        #install("gzip")
+        #install("lxml")
     except:
         pass
 
