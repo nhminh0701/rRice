@@ -17,4 +17,4 @@ addons:
     
 os:
 - linux
-- osx
+#- osx
