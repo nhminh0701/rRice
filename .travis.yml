@@ -2,7 +2,7 @@
 
 
 language: R
-sudo: true
+sudo: required
 cache: packages
 bioc_required: true
 
@@ -12,8 +12,6 @@ before_install:
   
 addons:
   apt:
-    sources:
-      - deadsnakes # source required so it finds the package definition below
     packages:
       - python3-pip
       
