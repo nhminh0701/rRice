@@ -6,6 +6,10 @@ sudo: required
 cache: packages
 bioc_required: true
 
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install python3
+
 r:
   - oldrel
   - release
@@ -15,4 +19,4 @@ r:
   
 os:
   - linux
-  - osx
+  #- osx
