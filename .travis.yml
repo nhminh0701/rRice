@@ -7,9 +7,7 @@ cache: packages
 bioc_required: true
 
 r:
-  - oldrel
   - release
-  - devel
   - bioc-release
   - bioc-devel
   
