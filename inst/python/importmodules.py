@@ -2,13 +2,9 @@
 
 import importlib
 import pip
-import subprocess
 
 def install(package):
     pip.main(['install', package])
-    
-def install1(name):
-    subprocess.call(['pip', 'install', name])
 
 def test():
     if (importlib.find_loader('pandas') is None) :
