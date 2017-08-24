@@ -28,7 +28,7 @@ def main():
     print("test")
     if (importlib.find_loader('pandas') is None) :
         print("None")
-        install1("pandas")
+        install("pandas")
     else:
         print("YES")
 
