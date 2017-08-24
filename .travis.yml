@@ -7,7 +7,7 @@ bioc_required: true
 
 os:
 - linux
-#- osx
+- osx
 
 before_install:
   - if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then sudo apt-get install python3; fi
