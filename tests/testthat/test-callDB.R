@@ -119,7 +119,7 @@ result2 <- list(list())
 result3 <- list()
 
 test_that("Test callSnpSeek with multiple values",{
-    #testthat::expect_equal(callSnpSeek(data1), result1)
+    testthat::expect_equal(callSnpSeek(data1), result1)
     testthat::expect_equal(callSnpSeek(data2), result2)
     testthat::expect_equal(callSnpSeek(data3), result3)
 })
@@ -155,7 +155,7 @@ liste2 <- list(list(list()))
 ##callDB1(list("Os01g0102700"), data1)
 
 test_that("Test callDB1 with multiple values",{
-    #testthat::expect_equal(callDB1(snp, data1), gene1)
+    testthat::expect_equal(callDB1(snp, data1), gene1)
     testthat::expect_error(callDB1(liste2, data3))
     testthat::expect_error(callDB1(1, data3))
     testthat::expect_error(callDB1("string", data3))
@@ -184,7 +184,7 @@ gene2 <- list(
 )
 
 test_that("Test callDB2 with multiple values",{
-    #testthat::expect_equal(callDB2(snp, data1), gene2)
+    testthat::expect_equal(callDB2(snp, data1), gene2)
     testthat::expect_error(callDB2("string", data2))
     testthat::expect_error(callDB2(data1))
 })
@@ -224,7 +224,7 @@ gene3 <- list(
 )
 
 test_that("Test callDB3 with multiple values",{
-    #testthat::expect_equal(callDB3(snp, data1), gene3)
+    testthat::expect_equal(callDB3(snp, data1), gene3)
     testthat::expect_error(callDB3("string", data2))
     testthat::expect_error(callDB3(data1))
 })
@@ -272,7 +272,7 @@ gene6 <- list(
 )
 
 test_that("Test callDB6 with multiple values",{
-    #testthat::expect_equal(callDB6(snp1, data1), gene6)
+    testthat::expect_equal(callDB6(snp1, data1), gene6)
     testthat::expect_error(callDB6("string", data2))
     testthat::expect_error(callDB6(data1))
 })
@@ -291,7 +291,7 @@ gene7 <- list(
 )
 
 test_that("Test callDB7 with multiple values",{
-    #testthat::expect_equal(callDB7(snp1, data1), gene7)
+    testthat::expect_equal(callDB7(snp1, data1), gene7)
     testthat::expect_error(callDB7("string", data2))
     testthat::expect_error(callDB7(data1))
 })
@@ -313,7 +313,7 @@ gene8 <- list(
 )
 
 test_that("Test callDB8 with multiple values",{
-    #testthat::expect_equal(callDB8(snp2, data1), gene8)
+    testthat::expect_equal(callDB8(snp2, data1), gene8)
     testthat::expect_error(callDB8("string", data2))
     testthat::expect_error(callDB8(data1))
 })
@@ -336,7 +336,7 @@ gene9 <- list(
 )
 
 test_that("Test callDB9 with multiple values",{
-    #testthat::expect_equal(callDB9(snp3, data1), gene9)
+    testthat::expect_equal(callDB9(snp3, data1), gene9)
     testthat::expect_error(callDB9("string", data2))
     testthat::expect_error(callDB9(data1))
 })
