@@ -2,6 +2,7 @@
 
 import importlib
 import pip
+import pandas
 
 def install(package):
     pip.main(['install', package])
@@ -22,11 +23,6 @@ def test():
         
 def main():
     print("test")
-    if (importlib.find_loader('pandas') is None) :
-        print("None")
-        install("pandas")
-    else:
-        print("YES")
 
 
 # Pour eviter que le script soit execute lors d'un simple import
