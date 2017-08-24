@@ -22,6 +22,7 @@ def test():
         
 def main():
     print("test")
+    install("pandas")
 
 
 # Pour eviter que le script soit execute lors d'un simple import
