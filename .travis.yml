@@ -6,8 +6,7 @@ cache: packages
 bioc_required: true
 
 os:
-- linux
-#- osx
+- osx
 
 addons:
   apt:
