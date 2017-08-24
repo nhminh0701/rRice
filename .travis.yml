@@ -5,16 +5,14 @@ sudo: required
 cache: packages
 bioc_required: true
 
-before_install:
-- sudo apt-get update
-- sudo apt-get install python3
-- sudo apt-get install python3-pip
-  
-addons:
-  apt:
-    packages:
-    - python3-pip
-    
 os:
 - linux
 #- osx
+
+before_install:
+  - if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then sudo apt-get install python3; fi
+  - if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then sudo apt-get install python3-pip; fi
+
+  
+
+    
