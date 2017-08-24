@@ -6,7 +6,7 @@ cache: packages
 bioc_required: true
 
 os:
-- linux
+#- linux
 - osx
 
 before_install:
