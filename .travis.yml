@@ -9,6 +9,13 @@ os:
 - linux
 - osx
 
+r:
+  - oldrel
+  - release
+  - devel
+  - bioc-release
+  - bioc-devel
+
 addons:
   apt:
     packages:
