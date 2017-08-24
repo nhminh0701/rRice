@@ -6,7 +6,7 @@ import pip
 def install(package):
     pip.main(['install', package])
 
-def main():
+def test():
     if (importlib.find_loader('pandas') is None) :
         install("pandas")
     if (importlib.find_loader('bs4') is None) :
@@ -19,6 +19,9 @@ def main():
         install("gzip")
     if (importlib.find_loader('lxml') is None) :
         install("lxml")
+        
+def main():
+    print("test")
 
 
 # Pour eviter que le script soit execute lors d'un simple import
