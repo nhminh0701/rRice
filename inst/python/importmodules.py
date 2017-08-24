@@ -22,7 +22,10 @@ def test():
         
 def main():
     print("test")
-    install("pandas")
+    if (importlib.find_loader('pandas') is None) :
+        print("None")
+    else:
+        print("YES")
 
 
 # Pour eviter que le script soit execute lors d'un simple import
