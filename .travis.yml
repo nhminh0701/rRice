@@ -20,6 +20,7 @@ matrix:
   exclude:
     - os: osx
       r : devel 
+    - os : osx
       r : bioc-devel
       
 
