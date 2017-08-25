@@ -19,16 +19,15 @@ os:
 matrix:
   exclude:
     - os: osx
-      r : 
-        - devel 
-        - bioc-devel
+      r : devel 
+      r : bioc-devel
       
 
 
 
 before_install:
   - if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then sudo apt-get install python3; fi
-  #- if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then sudo apt-get install python3-pip; fi
+  - if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then sudo apt-get install python3-pip; fi
   - if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then sudo pip3 install pandas; fi
   - if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then sudo pip3 install requests; fi
   - if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then sudo pip3 install bs4; fi
