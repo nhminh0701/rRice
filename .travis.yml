@@ -19,7 +19,9 @@ os:
 matrix:
   exclude:
     - os: osx
-      r : devel, bioc-devel
+      r : 
+        - devel 
+        - bioc-devel
       
 
 
