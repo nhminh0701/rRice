@@ -23,9 +23,6 @@ matrix:
     - os : osx
       r : bioc-devel
       
-
-
-
 before_install:
   - if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then sudo apt-get install python3; fi
   - if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then sudo apt-get install python3-pip; fi
