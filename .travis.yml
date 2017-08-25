@@ -5,31 +5,22 @@ sudo: required
 cache: packages
 bioc_required: true
 
+r:
+  - oldrel
+  - release
+  - devel
+
+os:
+- linux
+- osx
+
 matrix:
-  include:
-    - os: linux
-      r : 
-        - oldrel
-        - release
-        - devel
-        - bioc-release
-        - bioc-devel
+  exclude:
     - os: osx
-      r : 
-        - oldrel
-        - release
-        - bioc-release
+      r : devel
+      
 
-#os:
-#- linux
-#- osx
 
-#r:
-#  - oldrel
-#  - release
-#  - devel
-#  - bioc-release
-#  - bioc-devel
 
 before_install:
   - if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then sudo apt-get install python3; fi
