@@ -9,6 +9,8 @@ r:
   - oldrel
   - release
   - devel
+  - bioc-release
+  - bioc-devel
 
 os:
 - linux
@@ -17,7 +19,7 @@ os:
 matrix:
   exclude:
     - os: osx
-      r : devel
+      r : devel, bioc-devel
       
 
 
