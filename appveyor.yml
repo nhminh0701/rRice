@@ -12,7 +12,10 @@ init:
 
 install:
   - ps: Bootstrap
-  - cmd: "python3 -m pip3 install requests"
+  - cmd: "python -m pip install requests"
+  - cmd: "python -m pip install pandas"
+  - cmd: "python -m pip install bs4"
+  - cmd: "python -m pip install lxml"
   
 cache:
   - C:\RLibrary
