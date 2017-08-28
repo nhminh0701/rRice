@@ -13,15 +13,6 @@ init:
 install:
   - ps: Bootstrap
   - cmd: msiexec.exe /qn /i https://www.python.org/ftp/python/3.4.2/python-3.4.2.msi
-  PYTHON3: "C:\\Python34"
-  PYTHON3_VERSION: "3.4.2"
-  PYTHON3_ARCH: "32"
-  # Add custom environmental variables for pip
-  PIP3: C:\\Python34\Scripts\pip
-  - cmd: "python --version"
-  - cmd: "%PYTHON% python --version"
-  - cmd: "%PYTHON3% python --version"
-  - cmd: "python3 --version"
   - cmd: "python -m pip install pandas"
   - cmd: "python -m pip install bs4"
   - cmd: "python -m pip install lxml"
