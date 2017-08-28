@@ -119,7 +119,7 @@ result2 <- list(list())
 result3 <- list()
 
 test_that("Test callSnpSeek with multiple values",{
-    testthat::expect_equal(callSnpSeek(data1), result1)
+    #testthat::expect_equal(callSnpSeek(data1), result1)
     testthat::expect_equal(callSnpSeek(data2), result2)
     testthat::expect_equal(callSnpSeek(data3), result3)
 })
@@ -224,7 +224,7 @@ gene3 <- list(
 )
 
 test_that("Test callDB3 with multiple values",{
-    #testthat::expect_equal(callDB3(snp, data1), gene3)
+    testthat::expect_equal(callDB3(snp, data1), gene3)
     testthat::expect_error(callDB3("string", data2))
     testthat::expect_error(callDB3(data1))
 })
