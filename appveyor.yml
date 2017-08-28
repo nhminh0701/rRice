@@ -11,7 +11,7 @@ install:
   - ps: Bootstrap
   # Install Python (from the official .msi of http://python.org) and pip when
   # not already installed.
-  - ps: & appveyor\install.ps1
+  - ps: appveyor\install.ps1
   - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
   - "python --version"
   - "python -c \"import struct; print(struct.calcsize('P') * 8)\""
