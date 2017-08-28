@@ -2,22 +2,21 @@
 
 # Download script file from GitHub
 init:
-  - ps: |
+  ps: |
         $ErrorActionPreference = "Stop"
         Invoke-WebRequest http://raw.github.com/krlmlr/r-appveyor/master/scripts/appveyor-tool.ps1 -OutFile "..\appveyor-tool.ps1"
         Import-Module '..\appveyor-tool.ps1'
-  
-
-  
 
 install:
-  - ps: Bootstrap
+  ps: Bootstrap
+  
+before_build:
   - cmd: msiexec.exe /qn /i https://www.python.org/ftp/python/3.4.2/python-3.4.2.msi
   - cmd: "python -m pip install pandas"
   - cmd: "python -m pip install bs4"
   - cmd: "python -m pip install lxml"
   - cmd: "python -m pip install requests"
-  
+
 cache:
   - C:\RLibrary
 
