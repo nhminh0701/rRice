@@ -1,7 +1,5 @@
 # rRice package
 
-[//]: <> <img src="https://ci.appveyor.com/api/projects/status/32r7s2skrgm9ubva?svg=true" alt="Project Badge" width="100">
-
 This project has been made to simplify the work of biologists when they are studying the rice genome. The aim of this project is to support analysis of the rice genomics, including the downstream analysis of GWAS such as gene annotation, QTL analysis and primer design. 
 
 ## Overview
