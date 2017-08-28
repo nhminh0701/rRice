@@ -9,7 +9,7 @@ init:
 
 install:
   - ps: Bootstrap
-  - cd ~
+  - "cd ~"
   - Set-ExecutionPolicy -Scope CurrentUser
   - RemoteSigned
   - Get-ExecutionPolicy -List
