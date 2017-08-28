@@ -12,16 +12,13 @@ install:
   - ps: Bootstrap
   - cmd: msiexec.exe /qn /i https://www.python.org/ftp/python/3.4.2/python-3.4.2.msi TARGETDIR=C:\Python3.4.2
   # As AppVeyor has multiple python install, verify which ones will be used
-  - cmd: ECHO %PYTHON% %PYTHON_VERSION% %PYTHON_ARCH%
   - cmd: "%PYTHON%\\python --version"
   - cmd: "%PYTHON%\\python -c \"import struct; print(struct.calcsize('P') * 8)\""
-  - cmd: ECHO %PYTHON3% %PYTHON3_VERSION% %PYTHON3_ARCH%
   - cmd: "%PYTHON3%\\python --version"
   - cmd: "%PYTHON3%\\python -c \"import struct; print(struct.calcsize('P') * 8)\""
 
   # Prepare pip and pip3, PATH iterated left to right first hit wins
   - cmd: set PATH=%PYTHON%\scripts;%PYTHON3%\scripts;%PATH%
-  - cmd: ECHO Path - %PATH%
   - cmd: "%PIP% --version"
   - cmd: "%PIP3% --version"
   
