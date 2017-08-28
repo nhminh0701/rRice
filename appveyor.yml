@@ -16,7 +16,6 @@ before_build:
   - cmd: "python -m pip install bs4"
   - cmd: "python -m pip install lxml"
   - cmd: "python -m pip install requests"
-  - cmd: "python -m pip install pprint"
 
 cache:
   - C:\RLibrary
