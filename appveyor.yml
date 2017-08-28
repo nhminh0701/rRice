@@ -2,7 +2,7 @@
 
 environment:
   matrix:
-      - PYTHON3: "C:\\Python34"
+      PYTHON3: "C:\\Python34"
       PYTHON3_VERSION: "3.4.2"
       PYTHON3_ARCH: "32"
   # Add custom environmental variables for pip
