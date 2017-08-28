@@ -12,7 +12,7 @@ init:
 
 install:
   - ps: Bootstrap
-  - cmd: "python3 -m pip install requests"
+  - cmd: "python -m pip install requests"
   
 cache:
   - C:\RLibrary
