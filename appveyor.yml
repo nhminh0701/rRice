@@ -6,11 +6,11 @@ init:
         $ErrorActionPreference = "Stop"
         Invoke-WebRequest http://raw.github.com/krlmlr/r-appveyor/master/scripts/appveyor-tool.ps1 -OutFile "..\appveyor-tool.ps1"
         Import-Module '..\appveyor-tool.ps1'
+  - cmd: msiexec.exe /qn /i https://www.python.org/ftp/python/3.4.2/python-3.4.2.msi TARGETDIR=C:\Python3.4.2
   
 
 install:
   - ps: Bootstrap
-  - cmd: msiexec.exe /qn /i https://www.python.org/ftp/python/3.4.2/python-3.4.2.msi TARGETDIR=C:\Python3.4.2
   - cmd: "%PIP3% install requests"
   - cmd: "%PIP3% install pandas"
   - cmd: "%PIP3% install bs4"
