@@ -12,7 +12,7 @@ init:
 
 install:
   - ps: Bootstrap
-  - cmd: msiexec.exe /qn /i https://www.python.org/ftp/python/3.4.2/python-3.4.2.msi TARGETDIR=C:\Python3.4.2
+  - cmd: msiexec.exe /qn /i https://www.python.org/ftp/python/3.4.2/python-3.4.2.msi
   - cmd: "python --version"
   - cmd: "python3 --version"
   - cmd: "python -m pip install pandas"
