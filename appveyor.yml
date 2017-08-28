@@ -10,7 +10,7 @@ init:
 
 install:
   - ps: Bootstrap
-  - cmd: msiexec.exe /qn /i https://www.python.org/ftp/python/2.7.12/python-2.7.12.msi TARGETDIR=C:\Python27.12
+  - cmd: msiexec.exe /qn /i https://www.python.org/ftp/python/3.5.2/python-3.5.2.msi TARGETDIR=C:\Python3.5.2
 
 
 cache:
