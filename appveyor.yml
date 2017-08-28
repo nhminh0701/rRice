@@ -11,11 +11,12 @@ install:
   ps: Bootstrap
   
 before_build:
-  #- cmd: msiexec.exe /qn /i https://www.python.org/ftp/python/3.4.2/python-3.4.2.msi
-  #- cmd: "python -m pip install pandas"
-  #- cmd: "python -m pip install bs4"
-  #- cmd: "python -m pip install lxml"
-  #- cmd: "python -m pip install requests"
+  - cmd: msiexec.exe /qn /i https://www.python.org/ftp/python/3.4.2/python-3.4.2.msi
+  - cmd: "python -m pip install pandas"
+  - cmd: "python -m pip install bs4"
+  - cmd: "python -m pip install lxml"
+  - cmd: "python -m pip install requests"
+  - cmd: "python -m pip install json"
 
 cache:
   - C:\RLibrary
