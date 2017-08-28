@@ -8,7 +8,7 @@ init:
         Import-Module '..\appveyor-tool.ps1'
 
 install:
-  ps: Bootstrap
+  - ps: Bootstrap
   # Install Python (from the official .msi of http://python.org) and pip when
   # not already installed.
   - ps: if (-not(Test-Path($env:PYTHON))) { & appveyor\install.ps1 }
