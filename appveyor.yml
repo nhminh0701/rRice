@@ -13,10 +13,10 @@ init:
 install:
   - ps: Bootstrap
   - cmd: msiexec.exe /qn /i https://www.python.org/ftp/python/3.4.2/python-3.4.2.msi TARGETDIR=C:\Python3.4.2
-  - cmd: "python -m pip install pandas"
-  - cmd: "python -m pip install bs4"
-  - cmd: "python -m pip install lxml"
-  - cmd: "python -m pip install requests"
+  - cmd: "python -m pip3 install pandas"
+  - cmd: "python -m pip3 install bs4"
+  - cmd: "python -m pip3 install lxml"
+  - cmd: "python -m pip3 install requests"
   
 cache:
   - C:\RLibrary
