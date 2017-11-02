@@ -79,3 +79,4 @@ def rapdb(RAPID):
 
 
 
+print(rapdb("Os06g0654600"))
