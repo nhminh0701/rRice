@@ -1,0 +1,18 @@
+<databases>
+    <database dbname="oryzabase">
+        <link>https://shigen.nig.ac.jp/rice/oryzabase/gene/advanced/list</link>
+        <headers>
+            <header>"CGSNL Gene Symbol"</header>
+            <header>Gene symbol synonym(s)</header>
+            <header>CGSNL Gene Name</header>
+            <header>Gene name synonym(s)</header>
+            <header>Chr. No.</header>
+            <header>Trait Class</header>
+            <header>Gene Ontology</header>
+            <header>Trait Ontology</header>
+            <header>Plant Ontology</header>
+            <header>RAP ID</header>
+            <header>Mutant Image</header>
+        </headers>
+    </database>
+</databases>
