@@ -1,8 +1,8 @@
 <databases>
-    <database dbname="oryzabase">
-        <link>https://shigen.nig.ac.jp/rice/oryzabase/gene/advanced/list</link>
+    <database dbname="oryzabase" type="text/html" method="POST">
+        <link stern="https://shigen.nig.ac.jp/rice/oryzabase/gene/advanced/list"/>
         <headers>
-            <header>"CGSNL Gene Symbol"</header>
+            <header>CGSNL Gene Symbol</header>
             <header>Gene symbol synonym(s)</header>
             <header>CGSNL Gene Name</header>
             <header>Gene name synonym(s)</header>
@@ -14,5 +14,22 @@
             <header>RAP ID</header>
             <header>Mutant Image</header>
         </headers>
+        <data_struct indicator="table" identifier="class" identification_string="table_summery_list table_nowrapTh max_width_element" separator="td"/>
+    </database>
+
+    <database dbname="rapdb" type="text/html" method="GET">
+        <link stern="http://rapdb.dna.affrc.go.jp/tools/search/run?keyword=" aft="&amp;submit=Search&amp;id=on&amp;size=10"/>
+        <headers>
+            <header>ID</header>
+            <header>Description</header>
+            <header>Position</header>
+            <header>RAP-DB Gene Symbol Synonym(s)</header>
+            <header>RAP-DB Gene Name Synonym(s)</header>
+            <header>CGSNL Gene Symbol</header>
+            <header>CGSNL Gene Name</header>
+            <header>Oryzabase Gene Symbol Synonym(s)</header>
+            <header>Oryzabase Gene Name Synonym(s)</header>
+        </headers>
+        <data_struct indicator="tr" identifier="class" identification_string="result" separator="td"/>
     </database>
 </databases>

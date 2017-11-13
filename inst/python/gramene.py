@@ -15,3 +15,5 @@ def gramene(RAPID):
         link = 'http://data.gramene.org/v53/genes?q=' + RAPID + '&bedFeature=gene&bedCombiner=canonical'
         html_page = helper.connectionError(link)
         return html_page.content.decode('UTF-8')
+
+print(gramene("Os07g0586200"))

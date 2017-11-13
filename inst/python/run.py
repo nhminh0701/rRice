@@ -36,7 +36,7 @@ def main():
     id = sys.argv[5]
 
     if (db == "1"):
-        dataRapdb = rapdb.rapdb(id)
+        dataRapdb = helper.single_gene_query(id)
         print(dataRapdb)
 
     elif (db == "call_snpSeek"):
@@ -48,7 +48,7 @@ def main():
         print(dataGramene)
 
     elif (db == "3"):
-        dataOryzabase = oryzabase.oryzabase(id)
+        dataOryzabase = helper.single_gene_query("oryzabase",id)
         print(dataOryzabase)
 
     elif (db == "4"):
