@@ -5,13 +5,15 @@ import re
 import os
 import pprint
 import json
+import query
+
 
 def snpSeek(contig, start, end):
 
-    Log =  open('log.txt', 'w')
+    Log = open('log.txt', 'w')
     url = 'http://snp-seek.irri.org/ws/genomics/gene/osnippo/'
     u = ''
-    model = '&model=rap\n' #'&model=msu7\n'
+    model = '&model=rap\n'  # '&model=msu7\n'
     data = []
 
     """"
@@ -31,18 +33,22 @@ def snpSeek(contig, start, end):
     
     """
 
-
-    Log.write(url + contig + '?' + 'start='+ start + '&end='+ end + '&model=msu7\n')
+    Log.write(url + contig + '?' + 'start=' +
+              start + '&end=' + end + '&model=msu7\n')
     try:
         #u = urllib.urlopen(url + contig + '?' + 'start='+ start + '&end='+ end+'&model=msu7\n')
-        urlFind = url + contig + '?' + 'start='+ start + '&end='+ end +'&model=msu7'
+        urlFind = url + contig + '?' + 'start=' + start + '&end=' + end + '&model=rap'
+        print(urlFind)
         r = requests.get(urlFind)
         # encodage en bytes et pas en string  d'ou le decode
         data = json.loads(r.content.decode('UTF-8'))
     except:
-        Log.write(url + contig + '?' + 'start='+ start + '&end='+ end +'&model=msu7\n')
+        Log.write(url + contig + '?' + 'start=' +
+                  start + '&end=' + end + '&model=msu7\n')
         pass
     locus = contig + ':' + start + '-' + end
 
-    #retourne un tableau
+    # retourne un tableau
     return data
+
+print(snpSeek("chr01", "1", "43270923"))

@@ -7,36 +7,37 @@ import gzip
 import csv
 import pandas as pd
 import helper
-import snpseek as snpSeek
-import rapdb as rapdb
-import gramene as gramene
+# import snpseek as snpSeek
+#import rapdb as rapdb
+#import gramene as gramene
 #import ScriptV8_Oryzabase as oryzabase
-import oryzabase as oryzabase
-import snpseekall as snpSeekAll
-import ic4r as ic4r
+#import oryzabase as oryzabase
+import query
+# import snpseekall as snpSeekAll
+#import ic4r as ic4r
 import planttfdb as planttfdb
-import plntfdb as plntfdb
-import funricegenes as funricegenes
-import msu as msu
+# import plntfdb as plntfdb
+# import funricegenes as funricegenes
+# import msu as msu
 
 
 def main():
     pathScript = sys.argv[0]
     contig = sys.argv[1]
-    if len(contig)<2:
-        contig =  'chr0'+contig # test if for 10 - 11 - 12
+    if len(contig) < 2:
+        contig = 'chr0' + contig  # test if for 10 - 11 - 12
     else:
-        contig =  'chr'+contig
+        contig = 'chr' + contig
     start = sys.argv[2]
     end = sys.argv[3]
     db = sys.argv[4]
 
-    dataSnp = snpSeek.snpSeek(contig, start, end)
+    dataSnp = query.query("snpseek", [contig, start, end, "msu7"])
 
     id = sys.argv[5]
 
     if (db == "1"):
-        dataRapdb = helper.single_gene_query(id)
+        dataRapdb = query.query("rapdb", [id])
         print(dataRapdb)
 
     elif (db == "call_snpSeek"):
@@ -44,42 +45,42 @@ def main():
             print(dataSnp[i])
 
     elif (db == "2"):
-        dataGramene = gramene.gramene(id)
+        dataGramene = query.query("gramene", [id])
         print(dataGramene)
 
     elif (db == "3"):
-        dataOryzabase = helper.single_gene_query("oryzabase",id)
+        dataOryzabase = query.query("oryzabase", [id])
         print(dataOryzabase)
 
     elif (db == "4"):
-        ic4r.ic4r(id)
+        query.query('ic4r', [id])
 
     elif (db == "5"):
-        dataPlanttfdb = planttfdb.planttfdb(id)
+        dataPlanttfdb = planttfdb.planttfdb([id])
         print(dataPlanttfdb)
 
     # LOC_xxxxxxxx
     elif (db == "6"):
-        dataPlntfdb = plntfdb.plntfdb(id)
+        dataPlntfdb = query.query("plntfdb",[id])
         print(dataPlntfdb)
 
     elif (db == "7"):
-        dataFunricegenes = funricegenes.funricegenes(id)
+        dataFunricegenes = query.query("funricegene_genekeywords",[id])
         print(dataFunricegenes)
 
     elif (db == "8"):
-        dataFunricegenes2 = funricegenes.funricegenes2(id)
+        dataFunricegenes2 = query.query("funricegene_geneinfo",[id])
         print(dataFunricegenes2)
 
     elif (db == "9"):
-        dataFunricegenes3 = funricegenes.funricegenes3(id)
+        dataFunricegenes3 = query.query("funricegene_faminfo",[id])
         print(dataFunricegenes3)
 
     elif (db == "10"):
-        dataMsu = msu.msu(id)
+        dataMsu = query.query("msu",[id])
         print(dataMsu)
 
-                # Ecriture fichier a revoir !!!!!!!!! pour les id et hashmap[iricname] et hashmpap [raprepname]
+        # Ecriture fichier a revoir !!!!!!!!! pour les id et hashmap[iricname] et hashmpap [raprepname]
     elif (db == "13"):
         url = "http://rapdb.dna.affrc.go.jp/download/archive/RAP-MSU_2017-04-14.txt.gz"
         filename = url.split("/")[-1]
@@ -118,18 +119,18 @@ def main():
     # Plage chromosome
     # Cree le fichier fileID.txt
     elif (db == "11"):
-        snpSeekAll.snpSeekAll("Os12:1..27,531,856")
-        snpSeekAll.snpSeekAll("Os02:1..35,937,250")
-        snpSeekAll.snpSeekAll("Os03:1..36,413,819")
-        snpSeekAll.snpSeekAll("Os04:1..35,502,694")
-        snpSeekAll.snpSeekAll("Os05:1..29,958,434")
-        snpSeekAll.snpSeekAll("Os06:1..31,248,787")
-        snpSeekAll.snpSeekAll("Os07:1..29,697,621")
-        snpSeekAll.snpSeekAll("Os08:1..28,443,022")
-        snpSeekAll.snpSeekAll("Os09:1..23,012,720")
-        snpSeekAll.snpSeekAll("Os10:1..23,207,287")
-        snpSeekAll.snpSeekAll("Os11:1..29,021,106")
-        snpSeekAll.snpSeekAll("Os12:1..27,531,856")
+        query.query("snpseek", ["chr12", '1', "27531856", "rap"])
+        query.query("snpseek", ["chr02", "1", "35937250", "rap"])
+        query.query("snpseek", ["chr03", "1", "36413819", "rap"])
+        query.query("snpseek", ["chr04", "1", "35502694", "rap"])
+        query.query("snpseek", ["chr05", "1", "29958434", "rap"])
+        query.query("snpseek", ["chr06", "1", "31248787", "rap"])
+        query.query("snpseek", ["chr07", "1", "29697621", "rap"])
+        query.query("snpseek", ["chr08", "1", "28443022", "rap"])
+        query.query("snpseek", ["chr09", "1", "23012720", "rap"])
+        query.query("snpseek", ["chr10", "1", "23207287", "rap"])
+        query.query("snpseek", ["chr11", "1", "29021106", "rap"])
+        query.query("snpseek", ["chr12", "1", "27531856", "rap"])
 
     # Return the SnpSeek Call
     elif (db == "12"):
@@ -151,20 +152,7 @@ def main():
                 print("Not found")
     """
 
-
-
-
-
-
-
-
-
-
-
-
-
-    #geneID(contig, start, end, hashmap[], hashmap["raprepName"])
-
+    # geneID(contig, start, end, hashmap[], hashmap["raprepName"])
 
 
 

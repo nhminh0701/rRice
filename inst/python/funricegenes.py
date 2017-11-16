@@ -32,7 +32,6 @@ def funricegenes(ID):
     return hashmap
 
 
-
 def funricegenes2(ID):
 
     link = "https://funricegenes.github.io/famInfo.table.txt"
@@ -100,3 +99,5 @@ def funricegenes3(ID):
 
     return hashmap
 
+
+print(funricegenes2("LOC_Os07g39750"))

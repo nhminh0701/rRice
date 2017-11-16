@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import helper
+import re
 from bs4 import BeautifulSoup
 import json
 
@@ -13,9 +14,11 @@ def msu(id):
     headers = ["Genomic Sequence", "CDS", "Protein"]
     dict = {}
     i = 0
+    regex = re.compile("\n>LOC_.*\n|\n", re.IGNORECASE)
     for search in soup.findAll('pre'):
-        dataFormat = search.text.replace('>'+id, '')
-        dataFormat = dataFormat.replace('\n', '')
+        # dataFormat = search.text.replace('>'+id, '')
+        # dataFormat = dataFormat.replace('\n', '')
+        dataFormat = regex.sub("", search.text)
         dict[headers[i]] = dataFormat
         i = i + 1
 
@@ -23,4 +26,4 @@ def msu(id):
 
 
 
-
+print(msu("LOC_Os10g01006"))

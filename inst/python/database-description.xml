@@ -2,34 +2,139 @@
     <database dbname="oryzabase" type="text/html" method="POST">
         <link stern="https://shigen.nig.ac.jp/rice/oryzabase/gene/advanced/list"/>
         <headers>
-            <header>CGSNL Gene Symbol</header>
-            <header>Gene symbol synonym(s)</header>
-            <header>CGSNL Gene Name</header>
-            <header>Gene name synonym(s)</header>
-            <header>Chr. No.</header>
-            <header>Trait Class</header>
-            <header>Gene Ontology</header>
-            <header>Trait Ontology</header>
-            <header>Plant Ontology</header>
-            <header>RAP ID</header>
-            <header>Mutant Image</header>
+            <header type="">CGSNL Gene Symbol</header>
+            <header type="">Gene symbol synonym(s)</header>
+            <header type="">CGSNL Gene Name</header>
+            <header type="">Gene name synonym(s)</header>
+            <header type="">Chr. No.</header>
+            <header type="">Trait Class</header>
+            <header type="">Gene Ontology</header>
+            <header type="">Trait Ontology</header>
+            <header type="">Plant Ontology</header>
+            <header type="">RAP ID</header>
+            <header type="">Mutant Image</header>
         </headers>
-        <data_struct indicator="table" identifier="class" identification_string="table_summery_list table_nowrapTh max_width_element" separator="td"/>
+        <fields>
+            <field>rapId</field>
+        </fields>
+        <data_struct indicator="table" identifier="class" identification_string="table_summery_list table_nowrapTh max_width_element" line_separator="tr" cell_separator="td"/>
+        <prettify>\n>LOC_.*\n|\n|\r|\t</prettify>
     </database>
-
     <database dbname="rapdb" type="text/html" method="GET">
-        <link stern="http://rapdb.dna.affrc.go.jp/tools/search/run?keyword=" aft="&amp;submit=Search&amp;id=on&amp;size=10"/>
+        <link stern="http://rapdb.dna.affrc.go.jp/tools/search/run?" aft="&amp;submit=Search&amp;id=on&amp;size=10"/>
         <headers>
-            <header>ID</header>
-            <header>Description</header>
-            <header>Position</header>
-            <header>RAP-DB Gene Symbol Synonym(s)</header>
-            <header>RAP-DB Gene Name Synonym(s)</header>
-            <header>CGSNL Gene Symbol</header>
-            <header>CGSNL Gene Name</header>
-            <header>Oryzabase Gene Symbol Synonym(s)</header>
-            <header>Oryzabase Gene Name Synonym(s)</header>
+            <header type="">ID</header>
+            <header type="">Description</header>
+            <header type="">Position</header>
+            <header type="">RAP-DB Gene Symbol Synonym(s)</header>
+            <header type="">RAP-DB Gene Name Synonym(s)</header>
+            <header type="">CGSNL Gene Symbol</header>
+            <header type="">CGSNL Gene Name</header>
+            <header type="">Oryzabase Gene Symbol Synonym(s)</header>
+            <header type="">Oryzabase Gene Name Synonym(s)</header>
         </headers>
-        <data_struct indicator="tr" identifier="class" identification_string="result" separator="td"/>
+        <fields>
+            <field>keyword</field>
+        </fields>
+        <data_struct indicator="table" identifier="id" identification_string="result_table" line_separator="tr" cell_separator="td"/>
+        <prettify>\n>LOC_.*\n|\n|\r|\t</prettify>
+    </database>
+    <database dbname="gramene" type="text/JSON" method="GET">
+        <link stern="http://data.gramene.org/v53/genes?" aft=""/>
+        <fields>
+            <field>q</field>
+        </fields>
+    </database>
+    <database dbname="ic4r" type="text/html" method="GET">
+        <link stern="http://expression.ic4r.org/expression-api?" aft="#showtable"/>
+        <headers>
+            <header type="">Project ID</header>
+            <header type="">Experiment ID</header>
+            <header type="">Experiment name</header>
+            <header type="">Variety</header>
+            <header type="">Development stage</header>
+            <header type="">Tissue</header>
+            <header type="">Expression value</header>
+        </headers>
+        <fields>
+            <field>term</field>
+        </fields>
+        <data_struct indicator="table" identifier="id" identification_string="dataTable" line_separator="tr" cell_separator="td"/>
+        <prettify>\n>LOC_.*\n|\n|\r|\t</prettify>
+    </database>
+    <database dbname="plntfdb" type="text/html" method="GET">
+        <link stern="http://plntfdb.bio.uni-potsdam.de/v3.0/get_id.php?" aft=""/>
+        <headers>
+            <header type="">Species</header>
+            <header type="">Protein model</header>
+            <header type="">Family</header>
+        </headers>
+        <fields>
+            <field>seq_id</field>
+        </fields>
+        <data_struct indicator="div" identifier="id" identification_string="subcontent" line_separator="tr" cell_separator="td"/>
+        <prettify>\n>LOC_.*\n|\n|\r|\t</prettify>
+    </database>
+    <database dbname="funricegene_genekeywords" type="text/csv" method="GET" encoding="Windows-1252" deli="&#009;">
+        <link stern="https://funricegenes.github.io/geneKeyword.table.txt" aft=""/>
+        <headers>
+            <header>Symbol</header>
+            <header>RAPdb</header>
+            <header>MSU</header>
+            <header>Keyword</header>
+            <header>Title</header>
+        </headers>
+        <fields>
+            <field>RAPdb</field>
+            <field>MSU</field>
+        </fields>
+    </database>
+    <database dbname="funricegene_faminfo" type="text/csv" method="GET" encoding="Windows-1252" deli="&#009;">
+        <link stern="https://funricegenes.github.io/famInfo.table.txt" aft=""/>
+        <headers>
+            <header>Symbol</header>
+            <header>RAPdb</header>
+            <header>MSU</header>
+            <header>Name</header>
+        </headers>
+        <fields>
+            <field>RAPdb</field>
+            <field>MSU</field>
+        </fields>
+    </database>
+    <database dbname="funricegene_geneinfo" type="text/csv" method="GET" encoding="Windows-1252" deli="&#009;">
+        <link stern="https://funricegenes.github.io/geneInfo.table.txt" aft=""/>
+        <headers>
+            <header>Symbol</header>
+            <header>RAPdb</header>
+            <header>MSU</header>
+        </headers>
+        <fields>
+            <field>RAPdb</field>
+            <field>MSU</field>
+        </fields>
+    </database>
+    <database dbname="snpseek" type="text/JSON" method="GET">
+        <link stern="http://snp-seek.irri.org/ws/genomics/gene/osnippo/" aft=""/>
+        <fields>
+            <field></field>
+            <field>start</field>
+            <field>end</field>
+            <field>model</field>
+        </fields>
+        <data_struct indicator="div" identifier="id" identification_string="subcontent" line_separator="tr" cell_separator="td"/>
+    </database>
+    <database dbname="msu" type="text/html" method="GET">
+        <link stern="http://rice.plantbiology.msu.edu/cgi-bin/sequence_display.cgi?" aft=""/>
+        <headers>
+            <header type="">Genomic Sequence</header>
+            <header type="">CDS</header>
+            <header type="">Protein</header>
+        </headers>
+        <fields>
+            <field>orf</field>
+        </fields>
+        <data_struct indicator="div" identifier="class" identification_string="content" line_separator="div" cell_separator="pre"/>
+        <prettify>\n>LOC_.*\n|\n|\r|\t</prettify>
     </database>
 </databases>

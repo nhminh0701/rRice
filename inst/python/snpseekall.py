@@ -13,8 +13,8 @@ def snpSeekAll(string):
     # string look like : Os01:1..43,270,923
     contig = 'chr'+string[2:4]
     start = string[5]
-    print(start)
     end = string[8:].split(",")
+    print(end)
     end = end[0] + end[1] + end[2]
     print("c parti")
     Log = open('log.txt', 'w')
@@ -22,6 +22,9 @@ def snpSeekAll(string):
     u = ''
     model = '&model=rap\n'  # '&model=msu7\n'
     data = []
+    print(contig)
+    print(start)
+    print(end)
 
     Log.write(url + contig + '?' + 'start=' + start + '&end=' + end + '&model=msu7\n')
     try:
@@ -35,7 +38,7 @@ def snpSeekAll(string):
         pass
     locus = contig + ':' + start + '-' + end
 
-    print(data)
+    #print(data)
 
     # retourne un tableau
     with open("fileid.txt", 'a') as myfile:
@@ -43,3 +46,4 @@ def snpSeekAll(string):
         wr.writerow(data)
         myfile.close
 
+snpSeekAll("Os01:1..43,270,923")
