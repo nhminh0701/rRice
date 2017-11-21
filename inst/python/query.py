@@ -45,7 +45,6 @@ def query(db, qfields=[]):
             query_string = query_string[:-1]
             link += query_string + \
                 database_descriptor[0].findAll("link")[0]["aft"]
-        print(link)
         res = helper.connectionError(link)
 
     # Handle HTML based query
@@ -66,9 +65,6 @@ def query(db, qfields=[]):
                 i = 0
                 for dataCell in dataLine.findAll(database_descriptor[0].findAll("data_struct")[0]["cell_separator"]):
                     dataFormat = regex.sub("", dataCell.text)
-                    # dataFormat = dataFormat.replace('\r', '')
-                    # dataFormat = dataFormat.replace('\n', '')
-                    # dataFormat = dataFormat.replace('\t', '')
                     dict[headers[i]] = dataFormat
                     i += 1
                 if dict == {}:

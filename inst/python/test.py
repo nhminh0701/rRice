@@ -3,23 +3,29 @@
 import query
 
 # print("Oryzabase Query: ")
-# print(query.query("oryzabase", ["Os01g0102700"]))
+# for iter in query.query("oryzabase", ["Os03g0149100"]):
+#     print(iter)
 # print("\nRapDB Query")
-# print(query.query("rapdb", ["Os01g0102700"]))
+# for iter in query.query("rapdb", ["Os01g0102700"]):
+#     print(iter)
 # print("\nGramene Query")
-# print(query.query("Gramene", ["Os03g0149100"]))
+# for iter in query.query("Gramene", ["Os03g0149100"]):
+#     print(iter)
 # print("\nic4r Query")
-# print(query.query("ic4r", ["Os03g0149100"]))
+# for iter in query.query("ic4r", ["Os03g0149100"]):
+#     print(iter)
 # print("\nplntfdb Query")
-# print(query.query("plntfdb", ["321718"]))
+# for iter in query.query("plntfdb", ["321718"]):
+#     print(iter)
 # print("\nSNP-Seek Query")
-# print(query.query("snpseek", ["chr01", "1", "43270923", "rap"]))
+# for iter in query.query("snpseek", ["chr01", "1", "43270923", "rap"]):
+#     print(iter)
 # print("\nfunricegene Query")
 # for iter in query.query("funricegene_genekeywords", ["","LOC_Os07g39750"]):
 #     print(iter)
 # print("\nfunricegene Query")
 # for iter in query.query("funricegene_geneinfo", ["","LOC_Os07g39750"]):
-#     print(iter)
+    # print(iter)
 print("\nfunricegene Query")
 for iter in query.query("funricegene_faminfo", ["","LOC_Os07g39750"]):
     print(iter)
