@@ -1,12 +1,20 @@
-# Function: 
-        query(db, qfields=[])
+# Python query engine for rRice R package
+
+## Function
+
+```py
+query(db, qfields=[])
+```
+
 Return a array of JSON Object corresponding to the query.
 
 Take 2 argument:
-1. db: Database name, any database name that is exist in the database description file. Throw an exception if no db found under the name.
-2. qfields: list of argument for said database. The order of these argument follow the order of fields listed in the database description file.
 
-# Structure of Database description:
+1. db: Database name, any database name that is exist in the database description file. Throw an exception if no db found under the name.
+1. qfields: list of argument for said database. The order of these argument follow the order of fields listed in the database description file.
+
+## Structure of Database description
+
 ```xml
 <database dbname="name of the database" type="Type of the response" method="GET or POST">
     <link stern="the link section before the query" aft="section behind the query"/>
@@ -23,23 +31,28 @@ Take 2 argument:
 </database>
 ```
 
-# Example
+## Example
 
-## Example of system called query (Oryzabase):
-```
+### Example of system called query (Oryzabase)
+
+```bash
 python "run.py" oryzabase Os03g0149100
 ```
-## Example of query (Oryzabase): 
+
+### Example of query (Oryzabase)
+
 ```py
 query.query("oryzabase", ["Os03g0149100"])
 ```
 
-## Example of JSON response (Oryzabase):
+### Example of JSON response (Oryzabase)
+
 ```json
 {'CGSNL Gene Symbol': 'CRL1', 'Gene symbol synonym(s)': 'crl1 crl1* ARL1 ARL1/CRL1 OsLBD3-2 LBD3-2', 'CGSNL Gene Name': 'CROWN ROOTLESS 1', 'Gene name synonym(s)': 'crown rootless-1 CROWN ROOTLESS1 Crown rootless1 ADVENTITIOUS ROOTLESS1 ADVENTITIOUS ROOTLESS 1 lateral organ boundaries domain 3-2', 'Chr. No.': '3', 'Trait Class': ' Vegetative organ - Root', 'Gene Ontology': 'GO:0009888 - tissue developmentGO:0009887 - organ morphogenesis', 'Trait Ontology': 'TO:0000227 - root lengthTO:0000084 - root number', 'Plant Ontology': 'PO:0009005 - root ', 'RAP ID': 'Os03g0149100Oryzabase(IRGSP 1.0/Build5)Rap(IRGSP 1.0/Build5)', 'Mutant Image': ''}
 ```
 
-## Example of database description:
+### Example of database description
+
 ```xml
 <database dbname="oryzabase" type="text/html" method="POST">
     <link stern="https://shigen.nig.ac.jp/rice/oryzabase/gene/advanced/list"/>
@@ -64,8 +77,9 @@ query.query("oryzabase", ["Os03g0149100"])
 </database>
 ```
 
-# List of supported database:
-* Oryzabase 
+## List of supported database
+
+* Oryzabase
 * RapDB
 * Gramene
 * ic4r
