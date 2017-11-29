@@ -1,3 +1,7 @@
+"""Helper module
+Handle supportive function such as connection handling, path checking and error handling
+"""
+
 import os
 import requests
 import sys

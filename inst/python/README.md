@@ -27,7 +27,7 @@ Take 2 argument:
         <field>Query argument number 1</field>
     </fields>
     <data_struct indicator="indicator of return data segment" identifier="the attribute to identify data section" identification_string="value of said identifier" line_separator="indicator of a line of data" cell_separator="indicator of a cell of data"/>
-    <prettify>\n>regular expression of unwanted character</prettify>
+    <prettify>Regular expression of unwanted character</prettify>
 </database>
 ```
 
@@ -87,3 +87,24 @@ query.query("oryzabase", ["Os03g0149100"])
 * SNP-Seek
 * funricegene
 * MSU
+
+## List of exception
+
+* Server Exception
+
+    Throw when server response code is not 200.
+
+    Throw with the corresponding server response code.
+* Internet Connection Exceptioin
+
+    Throw requests.exceptions.RequestException
+
+    *requests* module exception.
+* Timeout Exception
+
+    Throw requests.exceptions.Timeout
+
+    *requests* module exception.
+* Database Exception
+
+    Throw when database description is not found.
