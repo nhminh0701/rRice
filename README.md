@@ -9,6 +9,7 @@ This **rRice** package will allow the biologist to :
 * Create an experiment.
 
 * Interrogate Databases. Currently, 10 databases are avaible to use :
+    - SNP-Seek (snp-seek.irri.org)
     - RAPDB (http://rapdb.dna.affrc.go.jp/)
     - Gramene (http://www.gramene.org/)
     - Oryzabase (https://shigen.nig.ac.jp/rice/oryzabase/)
