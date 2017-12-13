@@ -119,7 +119,7 @@ def main():
     # Plage chromosome
     # Cree le fichier fileID.txt
     elif (db == "11"):
-        query.query("snpseek", ["chr12", '1', "27531856", "rap"])
+        query.query("snpseek", ["chr01", '1', "43270923", "rap"])
         query.query("snpseek", ["chr02", "1", "35937250", "rap"])
         query.query("snpseek", ["chr03", "1", "36413819", "rap"])
         query.query("snpseek", ["chr04", "1", "35502694", "rap"])
