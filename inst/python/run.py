@@ -115,7 +115,7 @@ def main():
             data.to_csv(f, sep='\t')
 
             f.close()
-    # test branch - 2 
+    # test branch - 2
     # Plage chromosome
     # Cree le fichier fileID.txt
     elif (db == "11"):
