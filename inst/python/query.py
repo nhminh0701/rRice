@@ -60,11 +60,12 @@ def query(db, qfields=[]):
         if data != []:
             regex = re.compile(database_descriptor[0].findAll(
                 "prettify")[0].text, re.IGNORECASE)
+            replaceBy = database_descriptor[0].findAll("prettify")[0]["replaceBy"]
             for dataLine in data[0].findAll(database_descriptor[0].findAll("data_struct")[0]["line_separator"]):
                 dict = {}
                 i = 0
                 for dataCell in dataLine.findAll(database_descriptor[0].findAll("data_struct")[0]["cell_separator"]):
-                    dataFormat = regex.sub("", dataCell.text)
+                    dataFormat = regex.sub(replaceBy, dataCell.text)
                     dict[headers[i]] = dataFormat
                     i += 1
                 if dict == {}:
@@ -92,10 +93,3 @@ def query(db, qfields=[]):
                     data.append(dict)
                 f += 1
         return data
-
-
-# def multiple_gene_query(db, geneList):
-#     ret = []
-#     for gene in geneList:
-#         ret.append(single_gene_query(db, gene))
-#     return ret
