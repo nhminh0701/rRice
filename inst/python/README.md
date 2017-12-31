@@ -6,12 +6,12 @@
 query(db, qfields=[])
 ```
 
-Return a array of JSON Object corresponding to the query.
+Return a array of **JSON** Object corresponding to the query.
 
 Take 2 argument:
 
 1. db: Database name, any database name that is exist in the database description file. Throw an exception if no db found under the name.
-1. qfields: list of argument for said database. The order of these argument follow the order of fields listed in the database description file.
+1. qfields: list of **arguments** for said database. The order of these **arguments** follow the order of fields listed in the database description file.
 
 ## Structure of Database description
 
@@ -27,7 +27,7 @@ Take 2 argument:
         <field>Query argument number 1</field>
     </fields>
     <data_struct indicator="indicator of return data segment" identifier="the attribute to identify data section" identification_string="value of said identifier" line_separator="indicator of a line of data" cell_separator="indicator of a cell of data"/>
-    <prettify>Regular expression of unwanted character</prettify>
+    <prettify replaceBy="string to be in placed">Regular expression of unwanted character to be modifed in to replaceBy</prettify>
 </database>
 ```
 
@@ -51,7 +51,7 @@ query.query("oryzabase", ["Os03g0149100"])
 {'CGSNL Gene Symbol': 'CRL1', 'Gene symbol synonym(s)': 'crl1 crl1* ARL1 ARL1/CRL1 OsLBD3-2 LBD3-2', 'CGSNL Gene Name': 'CROWN ROOTLESS 1', 'Gene name synonym(s)': 'crown rootless-1 CROWN ROOTLESS1 Crown rootless1 ADVENTITIOUS ROOTLESS1 ADVENTITIOUS ROOTLESS 1 lateral organ boundaries domain 3-2', 'Chr. No.': '3', 'Trait Class': ' Vegetative organ - Root', 'Gene Ontology': 'GO:0009888 - tissue developmentGO:0009887 - organ morphogenesis', 'Trait Ontology': 'TO:0000227 - root lengthTO:0000084 - root number', 'Plant Ontology': 'PO:0009005 - root ', 'RAP ID': 'Os03g0149100Oryzabase(IRGSP 1.0/Build5)Rap(IRGSP 1.0/Build5)', 'Mutant Image': ''}
 ```
 
-### Example of database description
+### Examples of database description
 
 ```xml
 <database dbname="oryzabase" type="text/html" method="POST">
@@ -73,8 +73,21 @@ query.query("oryzabase", ["Os03g0149100"])
         <field>rapId</field>
     </fields>
     <data_struct indicator="table" identifier="class" identification_string="table_summery_list table_nowrapTh max_width_element" line_separator="tr" cell_separator="td"/>
-    <prettify>\n>LOC_.*\n|\n|\r|\t</prettify>
+    <prettify replaceBy="">\n>LOC_.*\n|\n|\r|\t</prettify>
 </database>
+
+<database dbname="bis" type="text/html" method="GET">
+        <link stern="http://bis.zju.edu.cn/ricenetdb/genenetwork.php?" aft =""/>
+        <headers>
+            <header type="">Genes list</header>
+        </headers>
+        <fields>
+            <field>DOWNID</field>
+            <field>UPID</field>
+        </fields>
+        <data_struct indicator="div" identifier="align" identification_string="center" line_separator="tr" cell_separator="td"/>
+        <prettify replaceBy=" ">\n>LOC_.*\n|\n|\r|\t|\xa0</prettify>
+    </database>
 ```
 
 ## List of supported database
@@ -87,6 +100,7 @@ query.query("oryzabase", ["Os03g0149100"])
 * SNP-Seek
 * funricegene
 * MSU
+* RiceNetDB
 
 ## List of exception
 
